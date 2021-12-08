@@ -10,7 +10,7 @@ public class CollisionCheck {
 		this.gp = gp;
 	}
 
-	public void checkTile(gr.aueb.dmst.mazegame ent) {
+	public void checkTile(gr.aueb.dmst.mazegame.Entity ent) {
 		// player's solid area coordinates
 		int eLeftX = ent.lx + ent.solidArea.x;
 		int eRightX = ent.lx + ent.solidArea.x + ent.solidArea.width;
