@@ -9,8 +9,9 @@ public class GamePanel extends JPanel implements Runnable{
 
     Thread gamThread;
     KeyListe keyl = new KeyListe();
-    Player pl = new Player(this, keyl);
-    TileMng tileMng = new TileMng(this);
+    public Player pl = new Player(this, keyl);
+    public TileMng tileMng = new TileMng(this);
+    public CollisionCheck colch = new CollisionCheck(this);
 
     final int originalTilesSize =16;
     final int scale = 3;
@@ -20,6 +21,12 @@ public class GamePanel extends JPanel implements Runnable{
     final int MaxScreenRow = 12;
     final int screenWidth = tileSize * MaxScreenCol;
     final int screenHeight = tileSize * MaxScreenRow;
+
+    // Labyrinth settings
+	public final int maxLCol = 89;
+	public final int maxLRow = 34;
+	public final int lWidth = tileSize * maxLCol;
+	public final int lHeight = tileSize * maxLRow;
 
 
         //FPS
