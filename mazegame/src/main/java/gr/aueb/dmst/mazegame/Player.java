@@ -6,11 +6,19 @@ public class Player extends Entity {
     
     GamePanel gp;
     KeyListe keyL;
+    
+    public final int screenX;
+	public final int screenY;
 
     public Player(GamePanel gp , KeyListe keyL) {
 
         this.gp=gp;
         this.keyL = keyL;
+        
+        screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
+		screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
+
+		solidArea = new Rectangle(8, 16, 32, 32);//collision setting 
 
         setDefaltValues();
         getPlayerImage();
@@ -38,8 +46,8 @@ public class Player extends Entity {
 
     public void setDefaltValues() {
 
-        x=100;
-        y=100;
+        lx = gp.tileSize * 0;
+		ly = gp.tileSize * 44;
         speed=4;
         direction = "down";
     }
@@ -48,24 +56,39 @@ public class Player extends Entity {
         
         if(keyL.upPres == true) {
             direction = "up";
-            y -= speed;
-        
         }
         else if(keyL.dwnPres == true) {
             direction = "down";
-            y +=speed;
-            
         }
         else if(keyL.leftPres == true) {
             direction = "left";
-            x -=speed;
-            
         }
         else if(keyL.rightPres == true) {
             direction = "right";
-            x+=speed;
-            
         }
+        // checking tile collision
+		collisionOn = false;
+		gp.colch.checkTile(this);
+        
+        // if collision is false, player can move
+		if (collisionOn == false) {
+			switch (direction) {
+			case "up":
+				ly -= speed;
+				break;
+			case "down":
+				ly += speed;
+				break;
+			case "left":
+				lx -= speed;
+				break;
+			case "right":
+				lx += speed;
+				break;
+			}
+		}
+
+        
     }
 
     public void draw(Graphics g2) {
@@ -91,7 +114,7 @@ public class Player extends Entity {
                 break;
         }
 
-        g2.drawImage(image, x, y, gp.tileSize , gp.tileSize,null);
+        g2.drawImage(image, screenX, screenY, gp.tileSize , gp.tileSize,null);
 
     }
 }
