@@ -7,14 +7,14 @@ import java.io.*;
 public class TileMng {
     
     GamePanel gmp;
-    Tile[] tile;
-    int mapTileNumpertxt[][];
+    public Tile[] tile;
+    public int mapTileNumpertxt[][];
 
     public TileMng(GamePanel gmp) {
         this.gmp=gmp;
 
         tile = new Tile[10];
-        mapTileNumpertxt = new int[gmp.MaxScreenCol][gmp.MaxScreenRow];
+        mapTileNumpertxt = new int[gmp.maxLCol][gmp.maxLRow];
 
         getTileImage();
         draw_Map();
@@ -24,12 +24,17 @@ public class TileMng {
        try {
            
         tile[0] = new Tile();
-       tile[0].image=ImageIO.read(getClass().getResourceAsStream("grass.png"));
+        tile[0].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
+        tile[0].collision = true;
         //tile[0].image=ImageIO.read(getClass().getResourceAsStream("grass.png"));
 
         tile[1] = new Tile();
-        tile[1].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
+        tile[1].image=ImageIO.read(getClass().getResourceAsStream("grass.png"));
       //  tile[1].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
+           
+        tile[2] = new Tile();
+	    tile[2].image = ImageIO.read(getClass().getResourceAsStream("door.png"));
+		tile[2].collision = true;
 
        } catch (Exception e) {
            e.printStackTrace();
@@ -37,18 +42,18 @@ public class TileMng {
     }
     public void draw_Map() {
         try {
-          InputStream is =getClass().getResourceAsStream("map.txt");
+          InputStream is =getClass().getResourceAsStream("Lavirinthos-sxediagramma.txt");
      //  InputStream is =getClass().getResourceAsStream("map.txt");
             BufferedReader b = new BufferedReader(new InputStreamReader(is));
 
             int col=0;
             int row=0;
 
-            while(col<gmp.MaxScreenCol && row<gmp.MaxScreenRow) {
+            while (col < gmp.maxLCol && row < gmp.maxLRow) {
 
                 String line = b.readLine();
 
-                while(col<gmp.MaxScreenCol) {
+                while(col<gmp.maxLCol) {
 
                     String numbers[] = line.split(" ");
 
@@ -59,7 +64,7 @@ public class TileMng {
                     col++;
 
                 }
-                if(col==gmp.MaxScreenCol) {
+                if(col==gmp.maxLCol) {
                     col=0;
                     row++;
                 }
@@ -76,25 +81,31 @@ public class TileMng {
         
         int col = 0;
         int row = 0;
-        int x = 0;
-        int y =0;
+       
         
 
-            while(col < gmp.MaxScreenCol && row<gmp.MaxScreenRow) {
+           while (col < gmp.maxLCol && row < gmp.maxLRow) {
 
-                int tileNum= mapTileNumpertxt[col][row];
-                
-                g1.drawImage(tile[tileNum].image, x, y, gmp.tileSize,gmp.tileSize, null);
-                col++;
-                x+= gmp.tileSize;
+			int tileNum = mapTileNumpertxt[col][row];
 
-                if(col== gmp.MaxScreenCol) {
-                    col=0;
-                    x=0;
-                    row++;
-                    y+=gmp.tileSize;
-                }
-            }
+			int LabX = col * gmp.tileSize;
+			int LabY = row * gmp.tileSize;
+			int screenX = LabX - gmp.pl.lx + gmp.pl.screenX;
+			int screenY = LabY - gmp.pl.ly + gmp.pl.screenY;
+
+			if (LabX + gmp.tileSize > gmp.pl.lx - gmp.pl.screenX && LabX - gmp.tileSize < gmp.pl.lx + gmp.pl.screenX
+					&& LabY + gmp.tileSize > gmp.pl.ly - gmp.pl.screenY
+					&& LabY - gmp.tileSize < gmp.pl.ly + gmp.pl.screenY) {
+
+				g1.drawImage(tile[tileNum].image, screenX, screenY, gmp.tileSize, gmp.tileSize, null);
+			}
+			col++;
+
+			if (col == gmp.maxLCol) {
+				col = 0;
+				row++;
+			}
+		}
 
 
        /*for(int i=0;i<16;i++) {
