@@ -1,5 +1,6 @@
 package gr.aueb.dmst.mazegame;
 import java.awt.image.*;
+import java.awt.Rectangle;
 public class Entity {
     public int lx, ly;
 	public int speed;
