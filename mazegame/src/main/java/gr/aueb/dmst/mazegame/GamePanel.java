@@ -23,8 +23,8 @@ public class GamePanel extends JPanel implements Runnable{
     final int screenHeight = tileSize * MaxScreenRow;
 
     // Labyrinth settings
-	public final int maxLCol = 89;
-	public final int maxLRow = 34;
+	public final int maxLCol = 44;
+	public final int maxLRow = 41;
 	public final int lWidth = tileSize * maxLCol;
 	public final int lHeight = tileSize * maxLRow;
 
