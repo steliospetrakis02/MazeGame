@@ -46,8 +46,8 @@ public class Player extends Entity {
 
     public void setDefaltValues() {
 
-        lx = gp.tileSize * 0;
-		ly = gp.tileSize * 44;
+        lx = gp.tileSize * 22;
+	ly = gp.tileSize * 8;
         speed=4;
         direction = "down";
     }
