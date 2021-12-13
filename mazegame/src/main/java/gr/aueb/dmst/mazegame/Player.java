@@ -53,7 +53,7 @@ public class Player extends Entity {
     }
 
     public void update() {
-        
+      if (keyL.upPres == true || keyL.dwnPres == true || keyL.leftPres == true || keyL.rightPres == true) {  
         if(keyL.upPres == true) {
             direction = "up";
         }
@@ -88,7 +88,7 @@ public class Player extends Entity {
 			}
 		}
 
-        
+      	}
     }
 
     public void draw(Graphics g2) {
