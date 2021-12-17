@@ -46,8 +46,9 @@ public class Player extends Entity {
 
     public void setDefaltValues() {
 
-        lx = gp.tileSize * 17;
-        ly = gp.tileSize * 33;
+         //where the player spawn
+        lx = gp.tileSize * 25;
+        ly = gp.tileSize * 38;
         speed=4;
         direction = "down";
     }
