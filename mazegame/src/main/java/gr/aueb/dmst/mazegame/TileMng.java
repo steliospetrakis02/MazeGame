@@ -33,8 +33,10 @@ public class TileMng {
       //  tile[1].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
            
         tile[2] = new Tile();
-	    tile[2].image = ImageIO.read(getClass().getResourceAsStream("door.png"));
-		tile[2].collision = true;
+	  tile[2].image = ImageIO.read(getClass().getResourceAsStream("door.png"));
+		//tile[2].collision = true;
+	    tile[3] = new Tile();
+	    tile[3].image = ImageIO.read(getClass().getResourceAsStream("door2.png"));
 
        } catch (Exception e) {
            e.printStackTrace();
