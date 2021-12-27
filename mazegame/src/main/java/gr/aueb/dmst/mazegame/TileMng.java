@@ -29,7 +29,7 @@ public class TileMng {
         //tile[0].image=ImageIO.read(getClass().getResourceAsStream("grass.png"));
 
         tile[1] = new Tile();
-        tile[1].image=ImageIO.read(getClass().getResourceAsStream("grass.png"));
+        tile[1].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
       //  tile[1].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
            
         tile[2] = new Tile();
