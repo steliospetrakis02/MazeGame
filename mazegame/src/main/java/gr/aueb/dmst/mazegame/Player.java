@@ -19,7 +19,9 @@ public class Player extends Entity {
 		screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
 		solidArea = new Rectangle(8, 16, 32, 32);//collision setting 
-
+        
+	solidAreaDefaultX = solidArea.x;
+	solidAreaDefaultY = solidArea.y;
         setDefaltValues();
         getPlayerImage();
     }
@@ -70,6 +72,10 @@ public class Player extends Entity {
         // checking tile collision
 		collisionOn = false;
 		gp.colch.checkTile(this);
+	      
+        //check object collision
+            int objIndex = gp.colch.checkObj(this, true);
+	    openDoor(objIndex);
         
         // if collision is false, player can move
 		if (collisionOn == false) {
@@ -90,6 +96,10 @@ public class Player extends Entity {
 		}
 
       	}
+    }
+    
+   public void openDoor(int ind) {
+    	
     }
 
     public void draw(Graphics g2) {
