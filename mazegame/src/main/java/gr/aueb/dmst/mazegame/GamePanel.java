@@ -44,6 +44,10 @@ public class GamePanel extends JPanel implements Runnable{
         this.addKeyListener(keyl);
     }
 
+    public void setupD() {
+    	os.setObject();
+    }
+	
     public void StartGameThread() {
 
         gamThread = new Thread(this);
