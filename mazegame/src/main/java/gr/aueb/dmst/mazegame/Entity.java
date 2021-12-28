@@ -7,5 +7,6 @@ public class Entity {
 	public BufferedImage up1;
 	public String direction;
 	public Rectangle solidArea; 
+	public int solidAreaDefaultX, solidAreaDefaultY;
 	public boolean collisionOn = false;
 }
