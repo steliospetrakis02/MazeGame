@@ -12,6 +12,8 @@ public class GamePanel extends JPanel implements Runnable{
     public Player pl = new Player(this, keyl);
     public TileMng tileMng = new TileMng(this);
     public CollisionCheck colch = new CollisionCheck(this);
+    public ObjSetter os = new ObjSetter(this);
+    public SuperObj obj[] = new SuperObj[30];
 
     final int originalTilesSize =16;
     final int scale = 3;
