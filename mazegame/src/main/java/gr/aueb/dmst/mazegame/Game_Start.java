@@ -28,7 +28,8 @@ public class Game_Start {
 
         window.setLocationRelativeTo(null);
         window.setVisible(true);
-
+        
+        game.setupD();
         game.StartGameThread();
     }
     
