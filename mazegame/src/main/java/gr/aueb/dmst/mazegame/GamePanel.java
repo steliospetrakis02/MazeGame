@@ -14,6 +14,11 @@ public class GamePanel extends JPanel implements Runnable{
     public CollisionCheck colch = new CollisionCheck(this);
     public ObjSetter os = new ObjSetter(this);
     public SuperObj obj[] = new SuperObj[30];
+	
+	  //GAME STATE 
+    public int gameState;
+    public final int playState = 1;
+    public final int pauseState = 2;
 
     final int originalTilesSize =16;
     final int scale = 3;
@@ -46,6 +51,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     public void setupD() {
     	os.setObject();
+	gameState = playState; //changed
     }
 	
     public void StartGameThread() {
@@ -90,7 +96,13 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     public void update() {
-        pl.update();
+	    if(gameState == playState ) {
+    		 pl.update();
+    	}
+        if(gameState == pauseState) {
+            //do nothing
+         
+        }
     
     }
 
