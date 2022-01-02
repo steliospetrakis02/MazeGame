@@ -2,13 +2,15 @@ package gr.aueb.dmst.mazegame;
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
+import java.util.Random;
 public class Player extends Entity {
     
     GamePanel gp;
     KeyListe keyL;
     
     public final int screenX;
-	public final int screenY;
+    public final int screenY;
+    public int ind;
 
     public Player(GamePanel gp , KeyListe keyL) {
 
