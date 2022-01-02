@@ -27,7 +27,6 @@ public class Player extends Entity {
     }
     public void getPlayerImage() {
         try {
-            System.out.println("try catch ");
        
        up1=ImageIO.read(getClass().getResourceAsStream("boy_down_1.png"));
     
@@ -100,13 +99,23 @@ public class Player extends Entity {
     
    public void openDoor(int ind) {
     	
+     this.ind=ind;
+    	if(ind != 999) {
+       
+    	    gp.gameState = gp.pauseState;
+    
+       Random rand = new Random(); 
+       int qn = rand.nextInt(63);
+       Questions questions = new Questions(gp,this,keyL);
+       questions.startQuestions(qn);
+           
+           
+    	}
     }
 
     public void draw(Graphics g2) {
 
-       // g2.setColor(Color.white);
-
-       // g2.fillRect(x, y, gp.tileSize, gp.tileSize);
+     
 
         BufferedImage image = null;
 
