@@ -156,6 +156,7 @@ public class Questions_Frame extends javax.swing.JFrame {
         }
         else {
             gp.gameState=gp.playState;
+            reset_players_key_pressed();
             this.setVisible(false);
            
         }
@@ -183,6 +184,7 @@ public class Questions_Frame extends javax.swing.JFrame {
         }
         else {
             gp.gameState=gp.playState;
+            reset_players_key_pressed();
             this.setVisible(false);
         }
        
@@ -205,6 +207,7 @@ public class Questions_Frame extends javax.swing.JFrame {
         }
         else {
             gp.gameState=gp.playState;
+            reset_players_key_pressed();
             this.setVisible(false);
             
         }
