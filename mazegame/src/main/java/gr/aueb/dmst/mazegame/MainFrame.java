@@ -19,6 +19,7 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame2
      */
     public MainFrame() {
+        this.setResizable(false);
         initComponents();
     }
     //first test
@@ -98,9 +99,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
-
+    //odhgies button
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
+        this.setVisible(false);
+        odhgies odi = new odhgies();
+        odi.setVisible(true);
 
     }                                        
 
