@@ -51,7 +51,21 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("jButton1");
+         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18));
+	
+	
+        jButton3.setText("Πνευματικά δικαιώματα");
+	
+	
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+	
+                jButton3ActionPerformed(evt);
+	
+            }
+
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setText("ΠΑΙΞΤΕ");
@@ -106,7 +120,13 @@ public class MainFrame extends javax.swing.JFrame {
         odhgies odi = new odhgies();
         odi.setVisible(true);
 
-    }                                        
+    }
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+        this.setVisible(false);
+        CopyRight cp = new CopyRight();
+        cp.setVisible(true);
+    }
+    
     //game start when button play pressed
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) { 
          this.setVisible(false);
