@@ -12,8 +12,9 @@ public class GamePanel extends JPanel implements Runnable{
     public Player pl = new Player(this, keyl);
     public TileMng tileMng = new TileMng(this);
     public CollisionCheck colch = new CollisionCheck(this);
+    public UI ui = new UI(this);
     public ObjSetter os = new ObjSetter(this);
-    public SuperObj obj[] = new SuperObj[30];
+    public SuperObj obj[] = new SuperObj[45];
 	
 	  //GAME STATE 
     public int gameState;
@@ -120,8 +121,12 @@ public class GamePanel extends JPanel implements Runnable{
         		 obj[i].draw(g2,this);
         	 }
          }
-
+       
+	//PLAYER
         pl.draw(g2);
+	    
+	 //UI
+        ui.draw(g2);
        
         g2.dispose();
     }
