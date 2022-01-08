@@ -18,9 +18,9 @@ public class Player extends Entity {
         this.keyL = keyL;
         
         screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
-		screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
+	screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
-		solidArea = new Rectangle(8, 16, 32, 32);//collision setting 
+	solidArea = new Rectangle(8, 16, 32, 32);//collision setting 
         
 	solidAreaDefaultX = solidArea.x;
 	solidAreaDefaultY = solidArea.y;
@@ -30,7 +30,14 @@ public class Player extends Entity {
     public void getPlayerImage() {
         try {
        
-       up1=ImageIO.read(getClass().getResourceAsStream("boy_down_1.png"));
+        	up1 = ImageIO.read(getClass().getResourceAsStream("BOY_UP_1.png"));
+		up2=ImageIO.read(getClass().getResourceAsStream("BOY_UP_2.png"));
+		down1=ImageIO.read(getClass().getResourceAsStream("BOY_DOWN_1.png"));
+		down2=ImageIO.read(getClass().getResourceAsStream("BOY_DOWN_2.png"));
+		left1=ImageIO.read(getClass().getResourceAsStream("BOY_LEFT_1.png"));
+		left2=ImageIO.read(getClass().getResourceAsStream("BOY_LEFT_2.png"));
+		right1=ImageIO.read(getClass().getResourceAsStream("BOY_RIGHT_1.png"));
+		right2=ImageIO.read(getClass().getResourceAsStream("BOY_RIGHT_2.png"));
     
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,6 +77,16 @@ public class Player extends Entity {
         else if(keyL.rightPres == true) {
             direction = "right";
         }
+	      
+	 spriteCounter++;
+	 if(spriteCounter > 12) {
+	    if(spriteNum == 1) {
+		spriteNum = 2;
+	 } else if(spriteNum == 2) {
+		spriteNum = 1;
+	 }
+		spriteCounter = 0;
+	 }
         // checking tile collision
 		collisionOn = false;
 		gp.colch.checkTile(this);
@@ -104,12 +121,21 @@ public class Player extends Entity {
      this.ind=ind;
     	if(ind != 999) {
        
-    	    gp.gameState = gp.pauseState;
-    
-       Random rand = new Random(); 
-       int qn = rand.nextInt(63);
-       Questions questions = new Questions(gp,this,keyL);
-       questions.startQuestions(qn);
+    	String objName = gp.obj[ind].name;
+
+	 switch (objName) {
+	   case "Door":
+	   case "Door2":
+		gp.gameState = gp.pauseState;
+		Random rand = new Random();
+		int qn = rand.nextInt(63);
+		Questions questions = new Questions(gp, this, keyL);
+		questions.startQuestions(qn);
+		break;
+	  case "Flag":
+		gp.ui.gameFinished = true;
+		break;
+	}
            
            
     	}
@@ -122,17 +148,37 @@ public class Player extends Entity {
         BufferedImage image = null;
 
         switch(direction ) {
-            case "up":
-                image =up1;
+        case "up":
+              if (spriteNum == 1) {
+		image = up1;
+	      }
+	      if (spriteNum == 2) {
+		image = up2;
+	      }
                 break;
             case "down":
-                image =up1;
+               if (spriteNum == 1) {
+		  image = down1;
+		}
+	       if (spriteNum == 2) {
+		  image = down2;
+		}
                 break;
             case "left":
-                image =up1;
+                if (spriteNum == 1) {
+		    image = left1;
+		}
+		if (spriteNum == 2) {
+		    image = left2;
+		}
                 break;
             case "right":
-                image =up1;
+               if (spriteNum == 1) {
+		   image = right1;
+		}
+		if (spriteNum == 2) {
+		   image = right2;
+		}
                 break;
         }
 
