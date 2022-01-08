@@ -107,8 +107,9 @@ public class MainFrame extends javax.swing.JFrame {
         odi.setVisible(true);
 
     }                                        
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    //game start when button play pressed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) { 
+         this.setVisible(false);
         Game_Start gm = new Game_Start();
         gm.Start_Game();
     }                                        
