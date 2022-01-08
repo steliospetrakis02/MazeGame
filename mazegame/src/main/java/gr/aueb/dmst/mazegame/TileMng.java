@@ -31,6 +31,7 @@ public class TileMng {
         tile[1] = new Tile();
         tile[1].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
       //  tile[1].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
+        //door
         tile[2] = new Tile();
         tile[2].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
        /* tile[2] = new Tile();
@@ -39,8 +40,13 @@ public class TileMng {
 	    tile[3] = new Tile();
 	    tile[3].image = ImageIO.read(getClass().getResourceAsStream("door2.png"));
 */
+	//2nd door
         tile[3] = new Tile();
         tile[3].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
+	       
+	 //flag
+        tile[4] = new Tile();
+        tile[4].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
 	       
        } catch (Exception e) {
            e.printStackTrace();
