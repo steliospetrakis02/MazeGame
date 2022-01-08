@@ -146,6 +146,11 @@ public class Questions_Frame extends javax.swing.JFrame {
         if(First_Question.getText().equals(op[correctAns])) {
            
             gp.obj[pl.ind]=null;
+           try {
+                gp.obj[pl.ind + 19] = null;
+            } catch (Exception e) {
+                gp.obj[pl.ind - 19] = null;
+            }
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
@@ -173,6 +178,11 @@ public class Questions_Frame extends javax.swing.JFrame {
         if(Second_Question.getText().equals(op[correctAns])) {
           
             this.setVisible(false);
+           try {
+                gp.obj[pl.ind + 19] = null;
+            } catch (Exception e) {
+                gp.obj[pl.ind - 19] = null;
+            }
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             gp.obj[pl.ind]=null;
@@ -194,7 +204,12 @@ public class Questions_Frame extends javax.swing.JFrame {
     
         if(Third_Question.getText().equals(op[correctAns])) {
        
-          this.setVisible(false);
+          this.setVisible(false); 
+          try {
+                gp.obj[pl.ind + 19] = null;
+            } catch (Exception e) {
+                gp.obj[pl.ind - 19] = null;
+            }
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             gp.obj[pl.ind]=null;
