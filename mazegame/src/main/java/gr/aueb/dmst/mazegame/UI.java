@@ -31,37 +31,40 @@ public class UI {
 			int textLength;
 			int x;
 			int y;
-			/*paradeigma
-			 * if(playTime > 60.00){
-			 * o paikths xanei
-			 * }
-			 * */
-			text = "Συγχαρητήρια, βγήκες από τον λαβύρινθο!";
-			textLength = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-			x = gp.screenWidth/2 - textLength/2;
-		    y = gp.screenHeight/2 - (gp.tileSize*3);
-			g2.drawString(text, x, y);
+			if(playTime > 75.00) {
+				text = "Δυστυχώς δεν τα κατάφερες!";
+				textLength = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+				x = gp.screenWidth/2 - textLength/2;
+			    y = gp.screenHeight/2 - (gp.tileSize*3);
+				g2.drawString(text, x, y);
+				
+			}else {
+				text = "Συγχαρητήρια, βγήκες από τον λαβύρινθο!";
+				textLength = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+				x = gp.screenWidth/2 - textLength/2;
+			    y = gp.screenHeight/2 - (gp.tileSize*3);
+				g2.drawString(text, x, y);
+				
+			}	
+				g2.setFont(arial_30);
+				g2.setColor(Color.white);
+				text = "Ο χρόνος που χρειάστηκες είναι: "+ dFormat.format(playTime) + "!";
+				textLength = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+				x = gp.screenWidth/2 - textLength/2;
+			    y = gp.screenHeight/2 + (gp.tileSize*3);
+				g2.drawString(text, x, y);
+
+                         gp.gamThread = null;
 			
 			
-			g2.setFont(arial_30);
-			g2.setColor(Color.white);
-			text = "Ο χρόνος που χρειάστηκες είναι: "+ dFormat.format(playTime) + "!";
-			textLength = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-			x = gp.screenWidth/2 - textLength/2;
-		    y = gp.screenHeight/2 + (gp.tileSize*3);
-			g2.drawString(text, x, y);
-			 
-			 gp.gamThread = null;
+		       } else {
+			       g2.setFont(arial_30);
+			       g2.setColor(Color.white);
 			
-			
-		} else {
-			g2.setFont(arial_30);
-			g2.setColor(Color.white);
-			
-			//TIME 
-			playTime +=(double)1/60;
-			g2.drawString("Time: "+ dFormat.format(playTime), gp.tileSize*11, 65);
-		}
+			      //TIME 
+			      playTime +=(double)1/60;
+			      g2.drawString("Time: "+ dFormat.format(playTime), gp.tileSize*11, 65);
+		       }
 		
 		
 	}
