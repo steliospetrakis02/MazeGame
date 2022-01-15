@@ -157,6 +157,11 @@ public class Questions_Frame extends javax.swing.JFrame {
             } catch (Exception e) {
                 gp.obj[pl.ind - 19] = null;
             }
+           try {
+                gp.obj[pl.ind - 19] = null;
+            } catch (Exception e) {
+                
+            }
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
@@ -189,6 +194,11 @@ public class Questions_Frame extends javax.swing.JFrame {
             } catch (Exception e) {
                 gp.obj[pl.ind - 19] = null;
             }
+           try {
+                gp.obj[pl.ind - 19] = null;
+            } catch (Exception e) {
+                
+            }
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             gp.obj[pl.ind]=null;
@@ -215,6 +225,11 @@ public class Questions_Frame extends javax.swing.JFrame {
                 gp.obj[pl.ind + 19] = null;
             } catch (Exception e) {
                 gp.obj[pl.ind - 19] = null;
+            }
+           try {
+                gp.obj[pl.ind - 19] = null;
+            } catch (Exception e) {
+                
             }
             gp.gameState=gp.playState;
             reset_players_key_pressed();
