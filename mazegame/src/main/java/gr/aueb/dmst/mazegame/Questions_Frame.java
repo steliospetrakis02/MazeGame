@@ -52,7 +52,13 @@ public class Questions_Frame extends javax.swing.JFrame {
         Questionn.setText(Question);
         First_Question.setText(op[0]);
         Second_Question.setText(op[1]);
-        Third_Question.setText(op[2]);
+        //if question 3 does not exist print nothing
+        try {
+            Third_Question.setText(op[2]);
+        } catch (Exception e) {
+            Third_Question.setText("");
+        }
+        
        
         
 }
