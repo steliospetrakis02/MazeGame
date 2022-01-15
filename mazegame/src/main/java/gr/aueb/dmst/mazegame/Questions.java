@@ -149,6 +149,10 @@ public class Questions {
 			  "Πόσα παιδιά είχε η Αφροδίτη;"
 			   };
 	  
+	//sinexeia erotisewn
+	
+	
+	
 	    public void  startQuestions(int n){  //int arguement n is the number of the question that will be asked to the player
 			
 			Questions_Frame questions = new Questions_Frame(qs[n],answers[n],ca[n],pl,gp,key);
