@@ -148,6 +148,7 @@ public class Questions {
 			  "Ποιά ήταν η μητέρα των τεράτων;",
 			  "Πόσα παιδιά είχε η Αφροδίτη;"
 			   };
+	//sinexeia erotisewn
 	  
 	    public void  startQuestions(int n){  //int arguement n is the number of the question that will be asked to the player
 			
