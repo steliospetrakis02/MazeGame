@@ -128,7 +128,7 @@ public class Player extends Entity {
 	   case "Door2":
 		gp.gameState = gp.pauseState;
 		Random rand = new Random();
-		int qn = rand.nextInt(63);
+		int qn = rand.nextInt(98);
 		Questions questions = new Questions(gp, this, keyL);
 		questions.startQuestions(qn);
 		break;
