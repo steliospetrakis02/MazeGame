@@ -19,6 +19,7 @@ public class Questions_Frame extends javax.swing.JFrame {
     GamePanel gmp = new GamePanel();
     KeyListe key;
    Player pl = new Player(gmp, key);
+   UI ui = new UI(gp);
     /**
      * Creates new form Questions_Frame
      */
@@ -35,7 +36,7 @@ public class Questions_Frame extends javax.swing.JFrame {
            
             
     
-    public Questions_Frame(String q, String[] options, int ans, Player pl,GamePanel gp,KeyListe key){
+    public Questions_Frame(String q, String[] options, int ans, Player pl,GamePanel gp,KeyListe key,UI ui){
         initComponents();
         Question=q;
         correctAns = ans;
@@ -43,7 +44,7 @@ public class Questions_Frame extends javax.swing.JFrame {
         this.pl=pl;
         this.gp = gp;
         this.key = key;
-        
+        this.ui = ui;
         
         
     }
@@ -171,6 +172,7 @@ public class Questions_Frame extends javax.swing.JFrame {
             
         }
         else {
+            ui.playTime+=(double)5;
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
@@ -209,6 +211,7 @@ public class Questions_Frame extends javax.swing.JFrame {
             
         }
         else {
+            ui.playTime+=(double)5;
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
@@ -242,6 +245,7 @@ public class Questions_Frame extends javax.swing.JFrame {
         
         }
         else {
+            ui.playTime+=(double)5;
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
