@@ -172,7 +172,7 @@ public class Questions_Frame extends javax.swing.JFrame {
             
         }
         else {
-            ui.playTime+=(double)5;
+            ui.playTime+=(double)5;//if the player's answer is false 5 seconds are added to the play time 
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
@@ -211,7 +211,7 @@ public class Questions_Frame extends javax.swing.JFrame {
             
         }
         else {
-            ui.playTime+=(double)5;
+            ui.playTime+=(double)5;//if the player's answer is false 5 seconds are added to the play time 
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
@@ -245,7 +245,7 @@ public class Questions_Frame extends javax.swing.JFrame {
         
         }
         else {
-            ui.playTime+=(double)5;
+            ui.playTime+=(double)5;//if the player's answer is false 5 seconds are added to the play time 
             gp.gameState=gp.playState;
             reset_players_key_pressed();
             this.setVisible(false);
