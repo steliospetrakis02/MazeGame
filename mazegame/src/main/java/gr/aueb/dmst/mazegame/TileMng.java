@@ -26,25 +26,18 @@ public class TileMng {
         tile[0] = new Tile();
         tile[0].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
         tile[0].collision = true;
-        //tile[0].image=ImageIO.read(getClass().getResourceAsStream("grass.png"));
 
         tile[1] = new Tile();
         tile[1].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
-      //  tile[1].image=ImageIO.read(getClass().getResourceAsStream("wall.png"));
-        //door
+        //obj door will be drawn on top of the grass tile
         tile[2] = new Tile();
         tile[2].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
-       /* tile[2] = new Tile();
-	  tile[2].image = ImageIO.read(getClass().getResourceAsStream("door.png"));
-		//tile[2].collision = true;
-	    tile[3] = new Tile();
-	    tile[3].image = ImageIO.read(getClass().getResourceAsStream("door2.png"));
-*/
-	//2nd door
+     
+        //obj door will be drawn on top of the grass tile
         tile[3] = new Tile();
         tile[3].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
 	       
-	 //flag
+	//obj flag will be drawn on top of the grass tile
         tile[4] = new Tile();
         tile[4].image=ImageIO.read(getClass().getResourceAsStream("grass_maze.png"));
 	       
@@ -54,8 +47,7 @@ public class TileMng {
     }
     public void draw_Map() {
         try {
-          InputStream is =getClass().getResourceAsStream("Lavirinthos-sxediagramma.txt");
-     //  InputStream is =getClass().getResourceAsStream("map.txt");
+            InputStream is =getClass().getResourceAsStream("Lavirinthos-sxediagramma.txt");
             BufferedReader b = new BufferedReader(new InputStreamReader(is));
 
             int col=0;
@@ -119,39 +111,6 @@ public class TileMng {
 			}
 		}
 
-
-       /*for(int i=0;i<16;i++) {
-            
-            for(int z=0;z<16;z++) {
-                g1.drawImage(tile[0].image, calx, 0, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 48, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 96, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 144, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 192, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 240, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 288, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 336, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 384, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 432, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 480, gmp.tileSize, gmp.tileSize, null);
-                g1.drawImage(tile[0].image, calx, 528, gmp.tileSize, gmp.tileSize, null);
-            
-                calx=calx+48;
-                
-              
-            }
-              
-        }
-        for(int i =0;i<8;i++) {
-            g1.drawImage(tile[1].image, calxwall, 0, gmp.tileSize, gmp.tileSize, null);
-            g1.drawImage(tile[1].image, calxwall, 192, gmp.tileSize, gmp.tileSize, null);
-
-            calxwall=calxwall+48;
-        }
-        //g1.drawImage(tile[1].image, 336, 48, gmp.tileSize, gmp.tileSize, null);
-        g1.drawImage(tile[1].image, 336, 48, gmp.tileSize, gmp.tileSize, null);
-        g1.drawImage(tile[1].image, 336, 144, gmp.tileSize, gmp.tileSize, null);
-        */
     }
         
         
