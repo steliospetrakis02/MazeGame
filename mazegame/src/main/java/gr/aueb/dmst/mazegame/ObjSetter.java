@@ -17,10 +17,6 @@ public class ObjSetter {
 		gp.obj[1].worldX = 30 * gp.tileSize;
 		gp.obj[1].worldY = 7 * gp.tileSize;
 		
-		/*gp.obj[2] = new Obj_Door(); 
-		gp.obj[2].worldX = 31 * gp.tileSize;
-		gp.obj[2].worldY = 5 * gp.tileSize;*/
-		
 		gp.obj[3] = new Obj_Door(); 
 		gp.obj[3].worldX = 16 * gp.tileSize;
 		gp.obj[3].worldY = 13 * gp.tileSize;
@@ -97,7 +93,6 @@ public class ObjSetter {
 		gp.obj[21].worldX = 32 * gp.tileSize;
 		gp.obj[21].worldY = 42 * gp.tileSize;
 		
-		//new doors
 		gp.obj[22] = new Obj_Door2(); 
 		gp.obj[22].worldX = 16 * gp.tileSize;
 		gp.obj[22].worldY = 14 * gp.tileSize;
