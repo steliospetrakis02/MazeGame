@@ -7,7 +7,7 @@ public class ObjSetter {
 	public ObjSetter(GamePanel gp) {
 		this.gp = gp;
 	}
-	
+	//setting the objects' placement on the labyrinth map
 	public void setObject() {
 		gp.obj[0] = new Obj_Door(); 
 		gp.obj[0].worldX = 30 * gp.tileSize;
