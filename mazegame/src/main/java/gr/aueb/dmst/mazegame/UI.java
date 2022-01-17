@@ -31,7 +31,7 @@ public class UI {
 			int textLength;
 			int x;
 			int y;
-			if(playTime > 75.00) {
+			if(playTime > 120.00) {//player loses if 2 mins pass 
 				text = "Δυστυχώς δεν τα κατάφερες!";
 				textLength = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
 				x = gp.screenWidth/2 - textLength/2;
@@ -45,7 +45,7 @@ public class UI {
 			    y = gp.screenHeight/2 - (gp.tileSize*3);
 				g2.drawString(text, x, y);
 				
-			}	
+			}	//displaying the play time
 				g2.setFont(arial_30);
 				g2.setColor(Color.white);
 				text = "Ο χρόνος που χρειάστηκες είναι: "+ dFormat.format(playTime) + "!";
