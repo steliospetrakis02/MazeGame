@@ -27,7 +27,7 @@ public class test {
 
     @Test
     public void array_test(){
-        assertEquals(97, q.ca.length);
+        assertEquals(99, q.ca.length);
         assertEquals(99, q.qs.length);
         assertEquals(99, q.answers.length);
 
