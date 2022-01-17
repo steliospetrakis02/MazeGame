@@ -69,8 +69,6 @@ public class GamePanel extends JPanel implements Runnable{
 
         while(gamThread != null) {
 
-            //long currentTime = System.nanoTime();
-
             update();
 
 
