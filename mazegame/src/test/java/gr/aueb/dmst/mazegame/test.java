@@ -30,17 +30,18 @@ public class test {
         assertEquals(99, q.ca.length);
         assertEquals(99, q.qs.length);
         assertEquals(99, q.answers.length);
-
+    }
+   @Test 
+   public void check_res_amount(){
         int questions=0;
         for(int i=0; i < 98; i ++) {
             for (int z =0; z<3; z++) {
                 questions++; 
-              
             }
           
         }
-        //questions had to be 297 but we fix that with try catch block
-        //assertEquals(99*3, questions);
+        //questions had to be 297 but we fix that with try catch block  
+      assertEquals(99*3, questions);
     
     }
   
